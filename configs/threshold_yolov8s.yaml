@@ -1,0 +1,68 @@
+version: 1
+experiment_family: YOLOv8s
+selected_on: validation
+test_not_used_for_threshold: true
+locked_at_utc: '2026-10-23T04:00:23.598529+00:00'
+selection_rule:
+  name: constrained_dual_threshold_max_f2
+  beta: 2.0
+  critical_classes:
+  - Open_circuit
+  - Short
+  constraints:
+    critical_recall_min: 0.95
+    per_critical_class_recall_min: 0.94
+    board_fr_max: 0.0
+  objective: max_micro_F2_within_feasible_region
+  sweep_start: 0.01
+  sweep_end: 0.95
+  sweep_step: 0.01
+  matching_iou: 0.5
+  class_aware: true
+  one_to_one: true
+  nms_iou: 0.7
+  tie_break:
+  - precision_desc
+  - tau_regular_desc
+  - tau_critical_desc
+board_level_rule: DEFECTIVE if any accepted detection remains after its class-group
+  threshold; otherwise PASS
+board_metrics:
+  unit: image
+  defective_images: 608
+  clean_images: 0
+  board_fa: N/A; validation has no clean images
+  board_fr_definition: defective image predicted PASS
+validation_split: data/splits/val.txt
+validation_split_sha256: 1763fb6be3f9a52bdec47fd95ee008a99c61957c2d65309ed9e52268f6d87eaa
+sweep_csv: evaluation/B0_B1_yolov8s_threshold/dual_threshold_sweep.csv
+sweep_csv_sha256: 82345df9b6a6ee7c4592de562f5a69ebe30a7f620a1609fbf6ae07aa8c30d3f0
+models:
+  B0:
+    model: B0 (YOLOv8s)
+    checkpoint: runs/B0_yolov8s_100ep_batch16/weights/best.pt
+    checkpoint_sha256: 2b0ec7abf64a4dd976cf10a17c809f017cd42d175ec6ff5e5258b902351afc64
+    tau_critical: 0.02
+    tau_regular: 0.58
+    validation_F2: 0.6805640711220111
+    validation_precision: 0.36333878887070375
+    validation_recall: 0.8705882352941177
+    validation_critical_recall: 0.9558823529411765
+    validation_recall_open_circuit: 0.9427480916030534
+    validation_recall_short: 0.969758064516129
+    validation_board_fr: 0.0
+    validation_board_fa: N/A
+  B1:
+    model: B1 (YOLOv8s-P2)
+    checkpoint: runs/B1_yolov8s_p2_100ep/weights/best.pt
+    checkpoint_sha256: 3b6d9284dba3fb9bc1475ea76f13caa63a45aa02a31b18dc29e35452d5158a80
+    tau_critical: 0.01
+    tau_regular: 0.57
+    validation_F2: 0.7792973355340722
+    validation_precision: 0.5596951735817104
+    validation_recall: 0.8640522875816994
+    validation_critical_recall: 0.9558823529411765
+    validation_recall_open_circuit: 0.9427480916030534
+    validation_recall_short: 0.969758064516129
+    validation_board_fr: 0.0
+    validation_board_fa: N/A
