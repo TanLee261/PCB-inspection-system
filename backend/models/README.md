@@ -1,13 +1,13 @@
-# Legacy Model Weights
+# Checkpoint YOLOv8s (B0)
 
-Thư mục này lưu trữ trọng số mô hình đã huấn luyện xong để phục vụ FastAPI Backend suy luận (Inference):
+`best.pt` trong thư mục này là bản sao cục bộ của checkpoint **YOLOv8s B0** đã huấn luyện trên sáu lớp PKU-Market-PCB.
 
-### File hiện tại:
-- **`best.pt`**: checkpoint YOLO11s-P2 B1.
-- Nguồn: `experiences/B1_yolo11s_p2_100ep/weights/best.pt`.
-- SHA-256: `b7e52ae54483d1797b0c7f4c632d69b7ad0fe1b8a914f28c09621eaaa2dd81bf`.
-- Threshold thử nghiệm B1: `0.25` cho toàn bộ sáu lớp.
+| Thuộc tính | Giá trị |
+|---|---|
+| Kiến trúc | YOLOv8s (baseline B0) |
+| Nguồn | `runs/B0_yolov8s_100ep_batch16/weights/best.pt` |
+| SHA256 | `2b0ec7abf64a4dd976cf10a17c809f017cd42d175ec6ff5e5258b902351afc64` |
+| Ảnh đầu vào | `imgsz=1024` |
+| Ngưỡng B0 | `0.25` cho sáu lớp |
 
-### Luồng nạp trọng số hiện tại
-
-Checkpoint YOLO11s-P2 `best.pt` ở đây là artifact cũ, được giữ nguyên để đối chiếu. API hiện dùng hai checkpoint YOLOv8s và YOLOv8s-P2 trong `runs/`, theo đường dẫn/hash tại `configs/threshold_yolov8s.yaml`; xem `backend/README.md`.
+FastAPI hiện nạp **trực tiếp** hai checkpoint B0/B1 theo đường dẫn và SHA256 trong `configs/threshold_yolov8s.yaml`, không nạp từ `backend/models/best.pt`. Bản sao ở đây chỉ để tiện đối chiếu cục bộ; các tệp `.pt` không lưu trong Git. Khi clone, tải checkpoint B0/B1 từ [GitHub Release](https://github.com/TanLee261/PCB-inspection-system/releases/tag/v1.0-models) theo hướng dẫn ở README gốc.

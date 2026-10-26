@@ -1,6 +1,6 @@
 # PCB Inspection API · YOLOv8s / YOLOv8s-P2
 
-API dùng trực tiếp hai checkpoint **đã huấn luyện** từ `runs/`, xác nhận SHA256 và mapping sáu lớp PKU trước khi suy luận. Cấu hình ngưỡng được lấy từ `configs/threshold_yolov8s.yaml` (chọn trên validation). Checkpoint `backend/models/best.pt` thuộc thí nghiệm YOLO11 cũ, **không được API sử dụng**.
+API dùng trực tiếp hai checkpoint **đã huấn luyện** từ `runs/`, xác nhận SHA256 và mapping sáu lớp PKU trước khi suy luận. Cấu hình ngưỡng được lấy từ `configs/threshold_yolov8s.yaml` (chọn trên validation). `backend/models/best.pt` là bản sao cục bộ của YOLOv8s B0 để đối chiếu; đường dẫn suy luận chính vẫn là `runs/`.
 
 | Cấu hình | Checkpoint | Ngưỡng Open_circuit / Short | Ngưỡng bốn lớp còn lại |
 |---|---|---:|---:|
