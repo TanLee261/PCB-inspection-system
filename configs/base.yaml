@@ -1,0 +1,27 @@
+# Baseline B0 tối ưu — YOLO11s, imgsz=1024, AdamW, Cosine LR, chống rò rỉ dữ liệu.
+experiment_name: B0_yolo11
+model: yolo11s.pt
+data: data/data.yaml
+imgsz: 1024
+epochs: 100
+batch: 16
+seed: 42
+patience: 100
+optimizer: AdamW
+device: 0
+
+augmentation:
+  degrees: 0.0
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.5
+  fliplr: 0.5
+  mosaic: 0.8
+  close_mosaic: 15
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+
+# Cố định trước khi đánh giá test; chỉ dùng để vẽ ảnh predict mẫu.
+predict_conf: 0.25
+predict_iou: 0.7

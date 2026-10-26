@@ -1,0 +1,722 @@
+/* Main Container */
+.app-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* ── Top Tab Bar (Thanh Tabbar Điều Hướng Riêng Từng Phần) ── */
+.top-tab-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 2px solid #e2e8f0;
+  padding: 10px 24px;
+  margin: 0 -20px 24px -20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.tab-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.tab-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  color: #2563eb;
+  background: #f1f5f9;
+}
+
+.tab-button.active {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.1);
+}
+
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  margin-left: 4px;
+}
+
+.tab-badge.pass {
+  background: #10b981;
+}
+
+.tab-status-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.status-dot.online {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+.status-dot.offline {
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+}
+
+/* ── Content View Wrapper (Chỉ hiển thị Tab đang chọn) ── */
+.tab-content-view {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section Title Bar (Giống hình mẫu) ── */
+.view-title-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.view-title-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* ── Banner Header (Giống hình 1) ── */
+.hero-banner {
+  text-align: center;
+  padding: 30px 20px 36px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-banner h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: -0.01em;
+}
+
+.hero-banner p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+/* ── Upload PCB Image Card (Giống hình 1) ── */
+.upload-card-container {
+  max-width: 840px;
+  margin: 0 auto 30px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 38px 32px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.upload-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 24px;
+}
+
+.dropzone-box {
+  border: 2px dashed #93c5fd;
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+  padding: 48px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.dropzone-box:hover, .dropzone-box.dragover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.dropzone-icon {
+  width: 56px;
+  height: 56px;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.dropzone-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.dropzone-sub {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+}
+
+.dropzone-status {
+  font-size: 0.9rem;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.model-selector {
+  max-width: 600px;
+  margin: 0 auto 22px;
+  padding: 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md);
+  background: #eff6ff;
+  text-align: left;
+}
+
+.model-selector label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.model-selector select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  color: #0f172a;
+  background: white;
+  font: inherit;
+}
+
+.model-selector select:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.model-selector p {
+  margin-top: 8px;
+  color: #334155;
+  font-size: 0.85rem;
+}
+
+.model-selector .model-unavailable {
+  color: #b91c1c;
+  overflow-wrap: anywhere;
+}
+
+.inspection-result {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+}
+
+.inspection-result.has-defect {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  color: #78350f;
+}
+
+.inspection-result.no-detection {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #14532d;
+}
+
+.inspection-result small {
+  font-size: 0.8rem;
+}
+
+.model-report-note {
+  margin: -10px 0 24px;
+  color: #475569;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-blue:hover:not(:disabled) {
+  background: #1d4ed8;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.btn-blue:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-outline:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Webcam Area */
+.webcam-container {
+  position: relative;
+  max-width: 680px;
+  margin: 20px auto 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid #2563eb;
+  background: #000;
+}
+
+.webcam-video {
+  width: 100%;
+  display: block;
+}
+
+/* ── Panel Card Cho Từng Tab ── */
+.tab-panel-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+/* ── Zoom Toolbar Controls (Thanh cuộn & - / + & Lăn chuột) ── */
+.zoom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+}
+
+.zoom-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zoom-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #1e293b;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.15rem;
+  transition: all 0.15s ease;
+}
+
+.zoom-btn:hover {
+  background: #e2e8f0;
+  color: #2563eb;
+}
+
+.zoom-slider {
+  width: 160px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.zoom-percent-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #2563eb;
+  min-width: 52px;
+}
+
+.zoom-hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Interactive Image Canvas Box */
+.zoom-viewport {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  background: #0f172a;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  border: 1px solid #cbd5e1;
+  user-select: none;
+}
+
+.zoom-viewport.can-pan {
+  cursor: grab;
+}
+
+.zoom-viewport.is-panning {
+  cursor: grabbing;
+}
+
+.zoomable-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Legend 6 classes */
+.legend-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.legend-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.legend-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* ── Inspection Report Card (Giống hình 4) ── */
+.report-header-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+.report-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.meta-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.meta-box-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.meta-box-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.summary-heading {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.summary-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.summary-card-title {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.summary-card-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.recommendation-container {
+  margin-top: 20px;
+}
+
+.recommendation-title {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.recommendation-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  color: #92400e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.recommendation-box.pass {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+/* ── Generated PDF Report (Giống hình 5) ── */
+.pdf-section-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.detection-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 30px;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.94rem;
+}
+
+.pdf-table th {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 12px 18px;
+  font-weight: 700;
+}
+
+.pdf-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.pdf-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.annotated-meta-block {
+  margin-bottom: 18px;
+  font-size: 0.98rem;
+  color: #334155;
+  line-height: 1.8;
+}
+
+.annotated-img-preview {
+  width: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  border: 1px solid #cbd5e1;
+  background: #000;
+}
+
+/* Empty tab notice */
+.empty-tab-box {
+  text-align: center;
+  padding: 90px 20px;
+  color: var(--text-dim);
+}
+
+.empty-tab-box h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+/* Print Signatures */
+.print-signatures-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.signature-line {
+  margin: 0 40px;
+  padding-top: 60px;
+  border-top: 1px dashed #94a3b8;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+@media (max-width: 900px) {
+  .top-tab-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 16px;
+  }
+
+  .tab-nav-group {
+    width: 100%;
+  }
+
+  .tab-status-group {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .upload-card-container {
+    padding: 24px 16px;
+  }
+
+  .tab-panel-card {
+    padding: 16px;
+  }
+
+  .zoom-viewport {
+    height: min(65vh, 620px);
+  }
+
+  .zoom-slider {
+    width: 100px;
+  }
+}

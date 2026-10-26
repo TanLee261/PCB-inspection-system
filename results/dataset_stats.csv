@@ -1,0 +1,7 @@
+dataset,split,images,labels,matched_pairs,images_without_label,labels_without_image,boxes,boxes_per_image
+DeepPCB,train,1200,1200,1200,0,0,8024,6.6866666666666665
+DeepPCB,valid,150,150,150,0,0,1005,6.7
+DeepPCB,test,150,150,150,0,0,984,6.56
+PKU,train,2772,2772,2772,0,0,11812,4.261183261183261
+PKU,valid,366,366,366,0,0,1307,3.57103825136612
+PKU,test,366,366,366,0,0,1307,3.57103825136612

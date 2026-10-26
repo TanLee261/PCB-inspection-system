@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pcb-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Hai checkpoint B0/B1 được tham chiếu từ threshold_yolov8s.yaml
+      - ./runs:/app/runs:ro
+      - ./backend/results:/app/results
+    environment:
+      - PCB_DEVICE=cpu
+      - PCB_PROJECT_ROOT=/app
+      - PCB_DEFAULT_PROFILE=B0
+      - PCB_CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://localhost
+    restart: unless-stopped
+    networks:
+      - pcb-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pcb-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - pcb-network
+
+networks:
+  pcb-network:
+    driver: bridge

@@ -1,0 +1,3 @@
+model,checkpoint_sha256,checkpoint_mb,parameters,memory_observed_mb,memory_kind
+B0,2b0ec7abf64a4dd976cf10a17c809f017cd42d175ec6ff5e5258b902351afc64,22.60561,11137922,1184.497664,"MPS driver allocation sampled, not peak"
+B1,3b6d9284dba3fb9bc1475ea76f13caa63a45aa02a31b18dc29e35452d5158a80,21.96168,10638536,1150.943232,"MPS driver allocation sampled, not peak"

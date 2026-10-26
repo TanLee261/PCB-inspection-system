@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+models/*.pt
+results/*.jpg
+uploads/*
+!uploads/.gitkeep

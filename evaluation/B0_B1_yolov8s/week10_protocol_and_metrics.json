@@ -1,0 +1,26 @@
+{
+  "protocol": "YOLOv8s Week 10; locked test split; no threshold tuning on test",
+  "test_split_sha256": "488eed2bd670c39988c741d0214df47ef9b5c4f3ff442eb4259c6f3b7163e459",
+  "test_images": 480,
+  "imgsz": 1024,
+  "nms_iou": 0.7,
+  "matching_iou": 0.5,
+  "default_conf": 0.25,
+  "threshold_config": "configs/threshold_yolov8s.yaml",
+  "checkpoint_sha256": {
+    "B0": "2b0ec7abf64a4dd976cf10a17c809f017cd42d175ec6ff5e5258b902351afc64",
+    "B1": "3b6d9284dba3fb9bc1475ea76f13caa63a45aa02a31b18dc29e35452d5158a80"
+  },
+  "map_metrics": {
+    "B0": {
+      "mAP50": 0.8782262801169516,
+      "mAP50_95": 0.42217023283655686
+    },
+    "B1": {
+      "mAP50": 0.8507691330661259,
+      "mAP50_95": 0.399923595512787
+    }
+  },
+  "clean_images": 0,
+  "caveat": "B0 test results existed before Week 10; B0 batch 16 and B1 batch 8."
+}

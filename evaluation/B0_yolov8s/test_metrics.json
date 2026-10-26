@@ -1,0 +1,81 @@
+{
+  "overall": {
+    "experiment": "B0_yolov8s",
+    "architecture": "YOLOv8s",
+    "split": "test",
+    "test_images": 480,
+    "total_gt_boxes": 2424,
+    "checkpoint": "best.pt",
+    "checkpoint_sha256": "2b0ec7abf64a",
+    "evaluated_at": "2026-10-21T16:06:32.232461+00:00",
+    "imgsz": 1024,
+    "precision_mean": 0.8443,
+    "recall_mean": 0.9207,
+    "f1_score_mean": 0.8808,
+    "mAP50": 0.8775,
+    "mAP75": 0.3352,
+    "mAP50_95": 0.4157
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "class_name": "Missing_hole",
+      "gt_boxes": 408,
+      "precision": 0.8652,
+      "recall": 0.9387,
+      "f1_score": 0.9004,
+      "mAP50": 0.8809,
+      "mAP50_95": 0.3284
+    },
+    {
+      "class_id": 1,
+      "class_name": "Mouse_bite",
+      "gt_boxes": 400,
+      "precision": 0.992,
+      "recall": 0.9286,
+      "f1_score": 0.9592,
+      "mAP50": 0.9675,
+      "mAP50_95": 0.5461
+    },
+    {
+      "class_id": 2,
+      "class_name": "Open_circuit",
+      "gt_boxes": 404,
+      "precision": 0.9769,
+      "recall": 0.944,
+      "f1_score": 0.9602,
+      "mAP50": 0.9742,
+      "mAP50_95": 0.5072
+    },
+    {
+      "class_id": 3,
+      "class_name": "Short",
+      "gt_boxes": 404,
+      "precision": 0.6427,
+      "recall": 0.9261,
+      "f1_score": 0.7588,
+      "mAP50": 0.8846,
+      "mAP50_95": 0.3374
+    },
+    {
+      "class_id": 4,
+      "class_name": "Spur",
+      "gt_boxes": 404,
+      "precision": 0.9914,
+      "recall": 0.8555,
+      "f1_score": 0.9185,
+      "mAP50": 0.9658,
+      "mAP50_95": 0.4491
+    },
+    {
+      "class_id": 5,
+      "class_name": "Spurious_copper",
+      "gt_boxes": 404,
+      "precision": 0.5978,
+      "recall": 0.931,
+      "f1_score": 0.7281,
+      "mAP50": 0.5917,
+      "mAP50_95": 0.326
+    }
+  ]
+}

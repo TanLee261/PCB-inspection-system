@@ -1,0 +1,2 @@
+Tesla T4, 15360 MiB, 8409 MiB
+Tesla T4, 15360 MiB, 3 MiB

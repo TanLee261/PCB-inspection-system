@@ -1,0 +1,5 @@
+Group được suy ra bằng tiền tố số đầu tiên của filename (nếu thiếu thì dùng component pHash); kiểm chứng bằng imagehash.phash và near-duplicate Hamming <= 5 trong từng dataset, kể cả giữa các split; giới hạn của cách suy ra này là tiền tố chỉ là giả thuyết template và pHash có thể nhầm ảnh tương tự, cluster bắc cầu không đảm bảo cùng một board.
+
+## Dataset compatibility (phase 07)
+
+Từ Class.txt và annotation gốc: 5/6 lớp có thể ánh xạ (1 cặp cần xác nhận ngữ nghĩa: Spurious_copper ↔ copper); Missing_hole không tương đương pin-hole. PKU có 3,504 ảnh và 14,426 box; DeepPCB có 1,500 ảnh và 10,013 box. Không nên merge DeepPCB vào train/validation/test của PKU. Ưu tiên PKU làm dataset chính. DeepPCB chỉ nên là external test/domain-shift nếu còn thời gian: chỉ đánh giá 5 lớp ánh xạ được sau khi xác nhận cặp có điều kiện, không fine-tune trên DeepPCB và không chọn lại threshold theo external test. Missing_hole là thiếu lỗ khoan đáng lẽ phải có; pin-hole là lỗ kim xuất hiện trên vùng đồng: khác bản chất vật lý nên không gộp cùng class ID. Các crop hỗ trợ kiểm tra định nghĩa, không tự động chứng minh mọi nhãn đúng.

@@ -1,0 +1,18 @@
+# Build context is the project root; only the backend enters the image.
+*
+!Dockerfile
+!configs/
+!configs/threshold_yolov8s.yaml
+!backend/
+!backend/**
+
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.pytest_cache/
+backend/test_*.py
+backend/**/*.pyc
+backend/models/*
+!backend/models/.gitkeep
+backend/results/*
+backend/uploads/*
+!backend/uploads/.gitkeep

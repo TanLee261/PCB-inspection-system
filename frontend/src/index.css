@@ -1,0 +1,157 @@
+:root {
+  /* ── Light Theme Palette ─────────────────────────────── */
+  --bg-primary: #f8fafc;        /* Nền chính sáng dịu mắt */
+  --bg-secondary: #f1f5f9;      /* Nền phụ (gray-100) */
+  --bg-card: #ffffff;           /* Card trắng tinh khôi */
+  --bg-card-hover: #f8fafc;
+  --border-color: #e2e8f0;      /* Viền xám nhạt (slate-200) */
+  --border-color-glow: rgba(37, 99, 235, 0.3);
+
+  --text-main: #0f172a;         /* Chữ đen đậm (slate-900) */
+  --text-muted: #475569;        /* Chữ xám trung tính (slate-600) */
+  --text-dim: #64748b;          /* Chữ phụ (slate-500) */
+
+  --primary: #2563eb;           /* Xanh dương chủ đạo (blue-600) */
+  --primary-hover: #1d4ed8;     /* Xanh đậm khi hover */
+  --primary-light: #eff6ff;     /* Xanh nhạt nền (blue-50) */
+  --primary-glow: rgba(37, 99, 235, 0.15);
+
+  --accent-cyan: #0284c7;
+  --accent-emerald: #059669;    /* Xanh lá cho Pass */
+  --accent-amber: #d97706;      /* Vàng cam cảnh báo */
+  --accent-rose: #dc2626;       /* Đỏ cảnh báo lỗi */
+  --accent-purple: #7c3aed;
+
+  /* Class colors for 6 PCB defect classes (Rực rỡ, dễ nhận diện trên ảnh) */
+  --color-missing-hole: #dc2626;    /* Đỏ */
+  --color-mouse-bite: #ea580c;      /* Cam */
+  --color-open-circuit: #ca8a04;    /* Vàng */
+  --color-short: #16a34a;           /* Xanh lá */
+  --color-spur: #0284c7;            /* Xanh cyan */
+  --color-spurious-copper: #9333ea; /* Tím */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* White Card Panel styling */
+.light-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease-in-out;
+}
+
+.light-panel:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Scanner Animation */
+@keyframes scan-vertical {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scanner-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #38bdf8, #2563eb, #38bdf8, transparent);
+  box-shadow: 0 0 15px #38bdf8, 0 0 30px #2563eb;
+  animation: scan-vertical 2.2s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Defect Badge tags */
+.defect-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Print Stylesheet for PDF Export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .light-panel {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+
+  .print-sheet {
+    padding: 10mm !important;
+    max-width: 100% !important;
+  }
+
+  .print-break-inside {
+    break-inside: avoid;
+  }
+}
+
+.print-only {
+  display: none;
+}

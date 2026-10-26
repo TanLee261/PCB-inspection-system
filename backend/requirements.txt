@@ -1,0 +1,7 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9,<1
+Pillow>=10,<13
+numpy>=1.26,<3
+ultralytics>=8.3.40,<9
+PyYAML>=6,<7

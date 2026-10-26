@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Datasets and large archives
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/labels/
+!data/processed/labels/**
+data/splits/*
+!data/splits/.gitkeep
+!data/splits/*.txt
+!data/splits/*.csv
+!data/splits/*.json
+*.zip
+*.tar.gz
+*.pt
+*.pth
+*.onnx
+
+# Machine-specific evaluation paths; notebooks regenerate them locally
+evaluation/**/eval*_data.yaml
+evaluation/**/*eval*split.txt
+evaluation/**/val_abs_split.txt
+evaluation/analysis/test_image_paths.txt
+
+# IDEs & OS
+.DS_Store
+.vscode/
+.idea/
