@@ -9,7 +9,6 @@ Nghiên cứu thực nghiệm trên PKU-Market-PCB · Ứng dụng minh họa v�
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](backend/requirements.txt)
 [![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)](frontend/package.json)
 [![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)](backend/README.md)
-[![License](https://img.shields.io/badge/License-MIT-334155)](LICENSE)
 
 [Bắt đầu](#bắt-đầu) · [Kết quả nghiên cứu](#kết-quả-nghiên-cứu) · [Tài liệu](#tài-liệu-và-cấu-trúc-dự-án)
 
@@ -30,9 +29,9 @@ Phần nghiên cứu so sánh hai checkpoint trên cùng bộ dữ liệu và te
 > **Phạm vi:** `PASS` chỉ có nghĩa không có box nào vượt ngưỡng đã chọn; đây không phải chứng nhận bo mạch không có lỗi. Dữ liệu test không có ảnh PCB bình thường để đánh giá tỷ lệ báo động giả ở mức bo mạch.
 
 <div align="center">
-  <img src="samples/B0_v8s_test_sample_1_Missing_hole_11_missing_hole_01.jpg" alt="Ví dụ dự đoán lỗi PCB bằng YOLOv8s trên ảnh PKU-Market-PCB" width="560" />
+  <img src="samples/B0_test_sample_2_Mouse_bite_11_mouse_bite_01.jpg" alt="Ví dụ phát hiện lỗi mouse bite trên ảnh PCB thuộc bộ dữ liệu PKU-Market-PCB" width="560" />
   <br />
-  <sub>Ví dụ ảnh dự đoán B0 trên bộ dữ liệu PKU-Market-PCB.</sub>
+  <sub>Ví dụ minh họa các vùng lỗi được phát hiện trên ảnh PCB.</sub>
 </div>
 
 ## Bắt đầu
@@ -132,7 +131,3 @@ docs/          Đề cương, báo cáo kiểm kê, quyết định và roadmap
 Ảnh PKU-Market-PCB gốc không được phân phối trong repository. Để chạy lại notebook huấn luyện/đánh giá, tải [bản dataset trên Kaggle](https://www.kaggle.com/datasets/liuxiaolong1/pcb-defect-detection-dataset), đối chiếu với [báo cáo dữ liệu](docs/01-Reports/data_audit.md) và dùng split trong `data/splits/`.
 
 **Tài liệu tham khảo trong repo:** [backend/API](backend/README.md) · [frontend](frontend/README.md) · [chỉ mục tài liệu](docs/README.md) · [roadmap](docs/02-Thong-Ke/roadmap.md).
-
-## Giấy phép
-
-Mã nguồn được phát hành theo [MIT License](LICENSE). Nguồn dữ liệu PKU-Market-PCB được trích dẫn riêng trong tài liệu nghiên cứu.
