@@ -131,3 +131,4 @@ docs/          Đề cương, báo cáo kiểm kê, quyết định và roadmap
 Ảnh PKU-Market-PCB gốc không được phân phối trong repository. Để chạy lại notebook huấn luyện/đánh giá, tải [bản dataset trên Kaggle](https://www.kaggle.com/datasets/liuxiaolong1/pcb-defect-detection-dataset), đối chiếu với [báo cáo dữ liệu](docs/01-Reports/data_audit.md) và dùng split trong `data/splits/`.
 
 **Tài liệu tham khảo trong repo:** [backend/API](backend/README.md) · [frontend](frontend/README.md) · [chỉ mục tài liệu](docs/README.md) · [roadmap](docs/02-Thong-Ke/roadmap.md).
+   
