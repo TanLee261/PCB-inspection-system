@@ -1,3 +1,13 @@
+---
+
+## Development Notes
+
+This project is continuously improved through experiments,
+documentation updates, and software development practices.
+
+- Model evaluation and error analysis
+- API and frontend improvements
+- Documentation and deployment updates
 <div align="center">
 
 # PCB Defect Inspector
